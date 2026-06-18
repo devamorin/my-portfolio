@@ -15,9 +15,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "devamorin - Senior Front-End Engineer",
+  title: "devamorin — Aspiring Full-Stack Developer",
   description:
-    "Crafting modern, accessible, and secure web experiences. Senior Front-End Software Engineer portfolio.",
+    "Christian Paul A. Amorin — Computer Engineering student at CIT-U building full-stack web apps: PeerMatch, DPT ONE, and TableBite. Open to OJT and remote opportunities.",
 };
 
 export default function RootLayout({

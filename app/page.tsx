@@ -2,25 +2,28 @@ import Image from "next/image";
 
 const projects = [
   {
-    icon: "deployed_code",
-    title: "Nexus OS Interface",
+    icon: "groups",
+    title: "PeerMatch",
     description:
-      "A high-performance web-based operating system interface designed for remote server management. Features real-time data visualization and a complex windowing system built entirely in the browser.",
-    tags: ["React", "TypeScript", "WebGL"],
+      "Academic course project — a deployed full-stack peer-to-peer task marketplace for CIT-U students. Features @cit.edu signup, role-based dashboards (client, freelancer, admin), real-time messaging, and production hosting on Vercel, Render, and Supabase.",
+    tags: ["Next.js", "Express", "Supabase"],
+    href: "https://peermatch-app.site",
   },
   {
-    icon: "hub",
-    title: "FinTech Dashboard",
+    icon: "storefront",
+    title: "DPT ONE",
     description:
-      "An enterprise-grade financial analytics dashboard. Implemented complex data grids, interactive charting using D3.js, and secure state management for handling sensitive transactional data.",
-    tags: ["Vue 3", "D3.js", "Pinia"],
+      "Built and shipped a full-stack e-commerce platform with 21 verified routes for a Cebu streetwear retail brand — storefront, checkout, orders, profile, and admin dashboard — with Supabase-backed auth, cart, order management, and COD plus QR Ph payment flows.",
+    tags: ["Next.js", "Supabase", "TypeScript"],
+    href: "https://dptone.vercel.app",
   },
   {
-    icon: "api",
-    title: "Design System Core",
+    icon: "qr_code_2",
+    title: "TableBite",
     description:
-      "Created and maintained a comprehensive open-source React component library used across multiple internal products. Focused on accessibility (WCAG AA), deep customizability, and exhaustive documentation.",
-    tags: ["React", "Storybook", "Tailwind"],
+      "Deployed a full-stack dine-in QR ordering system to production on Vercel with MySQL — customers scan a table QR to browse the menu, cart, and checkout; staff manage orders through an admin dashboard at tablebite.vercel.app.",
+    tags: ["Next.js", "MySQL", "TypeScript"],
+    href: "https://tablebite.vercel.app/admin/login",
   },
 ];
 
@@ -28,29 +31,31 @@ const skills = [
   {
     title: "Frontend",
     items: [
-      "React & Next.js",
-      "TypeScript & ES6+",
-      "Vue & Nuxt",
-      "Tailwind CSS & SASS",
-      "WebGL & Three.js",
+      "Next.js & React",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui & Radix UI",
+      "Responsive Web Design",
     ],
   },
   {
     title: "Backend & Data",
     items: [
       "Node.js & Express",
-      "PostgreSQL & MongoDB",
-      "GraphQL & REST APIs",
-      "Redis Caching",
+      "Next.js API Routes",
+      "PostgreSQL (Supabase)",
+      "MySQL",
+      "REST APIs & Socket.IO",
     ],
   },
   {
     title: "Tools & Systems",
     items: [
-      "Git & CI/CD Pipelines",
-      "Docker & Kubernetes",
-      "AWS & Vercel",
-      "Figma & Adobe CC",
+      "Git & GitHub",
+      "Vercel & Render",
+      "Supabase Auth & JWT",
+      "Visual Studio Code",
+      "Playwright (E2E)",
     ],
   },
 ];
@@ -61,7 +66,10 @@ const navLinks = [
   { href: "#skills", label: "Skills" },
 ];
 
-const footerLinks = ["GitHub", "LinkedIn", "Twitter", "Email"];
+const footerLinks = [
+  { label: "GitHub", href: "https://github.com/devamorin" },
+  { label: "Email", href: "mailto:christianpaulamorin28@gmail.com" },
+];
 
 export default function Home() {
   return (
@@ -135,13 +143,15 @@ export default function Home() {
         >
           <div className="flex-1 flex flex-col gap-6 z-10">
             <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-tight">
-              Senior Front-End <br className="hidden md:block" />
-              Software Engineer
+              Aspiring Full-Stack <br className="hidden md:block" />
+              Developer
             </h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
-              Crafting modern, accessible, and secure web experiences. I build
-              elegant interfaces, solve complex design challenges, and bring
-              ideas to life through clean, scalable code.
+              Computer Engineering student at Cebu Institute of Technology –
+              University. I build and deploy full-stack web applications — from
+              campus marketplaces and e-commerce platforms to QR-based ordering
+              systems — and bring hands-on embedded systems experience from
+              Arduino and sensor-driven hardware projects.
             </p>
             <div className="mt-4 flex items-center gap-6">
               <a
@@ -180,16 +190,20 @@ export default function Home() {
           </div>
           <div className="md:col-span-8 flex flex-col gap-6 font-body-lg text-body-lg text-on-surface-variant">
             <p>
-              I am an engineer deeply passionate about the intersection of
-              design and technology. My core focus is architecting front-end
-              systems that are not only performant and scalable but also provide
-              exceptional, intuitive user experiences.
+              I am a Computer Engineering student at Cebu Institute of
+              Technology – University (CIT-U), pursuing practical experience
+              through On-the-Job Training and team-based software projects. My
+              work spans the full stack — Next.js and React on the front end,
+              Node.js and Express or API routes on the back end, and PostgreSQL
+              or MySQL for persistence.
             </p>
             <p>
-              With a strong foundation in modern JavaScript frameworks and a keen
-              eye for visual detail, I bridge the gap between complex backend
-              logic and sleek user interfaces. I believe in writing code that is
-              as elegant to read as the interfaces it powers.
+              Beyond web development, I have built embedded systems including an
+              Arduino line-following robot and a smart car parking monitor using
+              IR sensors and digital logic. I graduated Senior High with
+              academic excellence (Silver Award, 96% GPA, STEM strand) and am
+              fluent in English and Filipino, with a stable remote setup and
+              flexible availability.
             </p>
           </div>
         </section>
@@ -202,7 +216,9 @@ export default function Home() {
             </h2>
             <a
               className="font-code-sm text-code-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1"
-              href="#"
+              href="https://github.com/devamorin"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               View Archive{" "}
               <span className="material-symbols-outlined text-[16px]">
@@ -223,7 +239,9 @@ export default function Home() {
                   </span>
                   <a
                     className="text-on-surface-variant hover:text-primary transition-colors"
-                    href="#"
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <span className="material-symbols-outlined">
                       open_in_new
@@ -289,16 +307,16 @@ export default function Home() {
         id="contact"
       >
         <div className="font-label-caps text-on-surface">
-          © 2024 devamorin — ENGINEERED FOR PERFORMANCE
+          © 2026 devamorin — COMPUTER ENGINEERING · CIT-U
         </div>
         <div className="flex gap-6">
           {footerLinks.map((link) => (
             <a
-              key={link}
+              key={link.label}
               className="font-code-sm text-code-sm text-on-surface-variant hover:text-tertiary transition-colors scale-105 duration-200"
-              href="#"
+              href={link.href}
             >
-              {link}
+              {link.label}
             </a>
           ))}
         </div>
