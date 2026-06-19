@@ -34,17 +34,15 @@ export default function ProjectCard({ project }: { project: Project }) {
     >
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       <div className="flex justify-between items-center">
-        <div className="h-10 flex items-center">
+        <div className="h-10 w-[140px] flex items-center shrink-0">
           {project.squareLogo ? (
-            <span className="inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-white/5 transition-transform duration-300 group-hover:scale-105">
-              <Image
-                src={project.logo}
-                alt={project.logoAlt}
-                width={48}
-                height={48}
-                className="h-full w-full object-cover"
-              />
-            </span>
+            <Image
+              src={project.logo}
+              alt={project.logoAlt}
+              width={32}
+              height={32}
+              className="h-8 w-8 shrink-0 rounded-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+            />
           ) : (
             <Image
               src={project.logo}
