@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -18,6 +18,12 @@ export const metadata: Metadata = {
   title: "devamorin · Aspiring Full-Stack Developer",
   description:
     "Christian Paul A. Amorin, Computer Engineering student at CIT-U building full-stack web apps: PeerMatch, DPT ONE, and TableBite. Open to OJT and remote opportunities.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#131313",
 };
 
 export default function RootLayout({

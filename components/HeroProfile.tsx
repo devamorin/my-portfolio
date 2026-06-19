@@ -21,11 +21,11 @@ export default function HeroProfile() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-80px" }}
-      className="flex-1 relative w-full h-[440px] lg:h-[600px] flex justify-center items-center"
+      className="flex-1 relative w-full h-[380px] sm:h-[440px] lg:h-[600px] flex justify-center items-center pb-8"
     >
-      <div className="absolute left-1/2 top-1/2 h-[320px] w-[320px] lg:h-[440px] lg:w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[90px] pointer-events-none" />
-      <div className="absolute right-[18%] top-[22%] h-40 w-40 rounded-full bg-tertiary/10 blur-[80px] pointer-events-none" />
-      <div className="absolute left-[20%] bottom-[20%] h-32 w-32 rounded-full bg-primary-container/15 blur-[70px] pointer-events-none" />
+      <div className="absolute left-1/2 top-1/2 h-[260px] w-[260px] sm:h-[320px] sm:w-[320px] lg:h-[440px] lg:w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[90px] pointer-events-none" />
+      <div className="absolute right-[18%] top-[22%] h-28 w-28 sm:h-40 sm:w-40 rounded-full bg-tertiary/10 blur-[80px] pointer-events-none" />
+      <div className="absolute left-[20%] bottom-[20%] h-24 w-24 sm:h-32 sm:w-32 rounded-full bg-primary-container/15 blur-[70px] pointer-events-none" />
 
       <Image
         src="/hero-workstation.png"
@@ -37,11 +37,11 @@ export default function HeroProfile() {
       />
 
       <div className="animate-float relative z-10">
-        <div className="absolute -top-3 -left-3 h-7 w-7 border-t-2 border-l-2 border-primary/50 rounded-tl-md" />
-        <div className="absolute -bottom-3 -right-3 h-7 w-7 border-b-2 border-r-2 border-primary/50 rounded-br-md" />
+        <div className="absolute -top-3 -left-3 h-5 w-5 sm:h-7 sm:w-7 border-t-2 border-l-2 border-primary/50 rounded-tl-md" />
+        <div className="absolute -bottom-3 -right-3 h-5 w-5 sm:h-7 sm:w-7 border-b-2 border-r-2 border-primary/50 rounded-br-md" />
 
         <div className="rounded-2xl bg-gradient-to-br from-primary/40 via-tertiary/20 to-transparent p-[1.5px] shadow-[0_0_60px_rgba(221,183,255,0.18)]">
-          <div className="relative w-[260px] sm:w-[300px] lg:w-[360px] aspect-[4/5] rounded-2xl overflow-hidden glass-panel">
+          <div className="relative w-[220px] sm:w-[260px] md:w-[300px] lg:w-[360px] aspect-[4/5] rounded-2xl overflow-hidden glass-panel">
             <Image
               src="/profile/christian-paul-amorin.png"
               alt="Christian Paul A. Amorin"

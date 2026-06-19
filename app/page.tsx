@@ -104,9 +104,9 @@ export default function Home() {
         </div>
       </div>
 
-      <main className="flex-grow w-full max-w-container-max mx-auto px-6 md:px-8 pt-32 pb-24 flex flex-col gap-section-gap">
+      <main className="flex-grow w-full max-w-container-max mx-auto px-6 md:px-8 pt-28 sm:pt-32 pb-20 sm:pb-24 flex flex-col gap-16 sm:gap-20 md:gap-24 lg:gap-section-gap">
         <section
-          className="min-h-[819px] flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 relative"
+          className="min-h-0 py-8 sm:py-12 lg:min-h-[819px] lg:py-0 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 relative"
           id="home"
         >
           <RevealGroup className="flex-1 flex flex-col gap-6 z-10">
@@ -142,13 +142,15 @@ export default function Home() {
                   </span>
                 </a>
                 <a
-                  className="inline-flex items-center gap-2 font-code-sm text-code-sm text-on-surface-variant hover:text-primary transition-colors"
+                  className="inline-flex items-center gap-2 font-code-sm text-code-sm text-on-surface-variant hover:text-primary transition-colors max-w-full"
                   href={`mailto:${email}`}
+                  aria-label="Email Christian Paul A. Amorin"
                 >
                   <span className="material-symbols-outlined text-base">
                     mail
                   </span>
-                  {email}
+                  <span className="sm:hidden">Email</span>
+                  <span className="hidden sm:inline break-all">{email}</span>
                 </a>
               </div>
             </RevealItem>
@@ -191,7 +193,10 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col gap-12" id="projects">
-          <Reveal direction="up" className="flex justify-between items-end">
+          <Reveal
+            direction="up"
+            className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-end"
+          >
             <h2 className="font-headline-md text-headline-md text-on-surface flex items-center gap-3 pt-2">
               <span className="w-8 h-px bg-primary" />
               Selected Works
@@ -255,17 +260,19 @@ export default function Home() {
         id="contact"
       >
         <div className="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="font-label-caps text-on-surface text-center md:text-left">
+          <div className="font-label-caps text-[11px] sm:text-label-caps text-on-surface text-center md:text-left">
             © 2026 devamorin · COMPUTER ENGINEERING · CIT-U
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
             <a
-              className="font-code-sm text-code-sm text-on-surface hover:text-tertiary transition-colors flex items-center gap-2"
+              className="font-code-sm text-code-sm text-on-surface hover:text-tertiary transition-colors flex items-center gap-2 max-w-full"
               href={`mailto:${email}`}
               aria-label="Email Christian Paul A. Amorin"
             >
-              <span className="material-symbols-outlined text-base">mail</span>
-              {email}
+              <span className="material-symbols-outlined text-base shrink-0">
+                mail
+              </span>
+              <span className="break-all">{email}</span>
             </a>
             <div className="flex gap-6">
               {socialLinks.map((link) => (
