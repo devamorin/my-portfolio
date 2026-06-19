@@ -6,7 +6,7 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 export type Project = {
   logo: string;
   logoAlt: string;
-  roundLogo?: boolean;
+  squareLogo?: boolean;
   title: string;
   description: string;
   tags: string[];
@@ -33,27 +33,27 @@ export default function ProjectCard({ project }: { project: Project }) {
       className="glass-panel rounded-xl p-6 flex flex-col gap-6 group hover:border-primary/30 hover:shadow-[0_0_30px_rgba(221,183,255,0.12)] transition-[border-color,box-shadow] duration-300 relative overflow-hidden"
     >
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-      <div className="flex justify-between items-start">
+      <div className="flex justify-between items-center">
         <div className="h-10 flex items-center">
-          <span
-            className={
-              project.roundLogo
-                ? "inline-flex items-center justify-center rounded-full bg-white/5 p-1.5"
-                : "inline-flex items-center"
-            }
-          >
+          {project.squareLogo ? (
+            <span className="inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-white/5 transition-transform duration-300 group-hover:scale-105">
+              <Image
+                src={project.logo}
+                alt={project.logoAlt}
+                width={48}
+                height={48}
+                className="h-full w-full object-cover"
+              />
+            </span>
+          ) : (
             <Image
               src={project.logo}
               alt={project.logoAlt}
               width={140}
               height={40}
-              className={
-                project.roundLogo
-                  ? "h-9 w-9 object-contain"
-                  : "h-8 w-auto max-w-[140px] object-contain object-left transition-transform duration-300 group-hover:scale-105"
-              }
+              className="h-8 w-auto max-w-[140px] object-contain object-left transition-transform duration-300 group-hover:scale-105"
             />
-          </span>
+          )}
         </div>
         <a
           className="text-on-surface-variant hover:text-primary transition-colors"

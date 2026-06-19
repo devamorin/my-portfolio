@@ -1,6 +1,6 @@
-import Image from "next/image";
 import NavBar from "@/components/NavBar";
 import ProjectCard, { type Project } from "@/components/ProjectCard";
+import HeroProfile from "@/components/HeroProfile";
 import TechIcon from "@/components/TechIcon";
 import { Reveal, RevealGroup, RevealItem } from "@/components/Reveal";
 
@@ -10,17 +10,17 @@ const projects: Project[] = [
     logoAlt: "PeerMatch logo",
     title: "PeerMatch",
     description:
-      "Academic course project — a deployed full-stack peer-to-peer task marketplace for CIT-U students. Features @cit.edu signup, role-based dashboards (client, freelancer, admin), real-time messaging, and production hosting on Vercel, Render, and Supabase.",
+      "Academic course project. A deployed full-stack peer-to-peer task marketplace for CIT-U students, featuring @cit.edu signup, role-based dashboards for clients, freelancers, and admins, real-time messaging, and production hosting on Vercel, Render, and Supabase.",
     tags: ["Next.js", "Express", "Supabase"],
     href: "https://peermatch-app.site",
   },
   {
     logo: "/projects/dpt-one-logo.png",
     logoAlt: "DPT ONE logo",
-    roundLogo: true,
+    squareLogo: true,
     title: "DPT ONE",
     description:
-      "Built and shipped a full-stack e-commerce platform with 21 verified routes for a Cebu streetwear retail brand — storefront, checkout, orders, profile, and admin dashboard — with Supabase-backed auth, cart, order management, and COD plus QR Ph payment flows.",
+      "Built and shipped a full-stack e-commerce platform with 21 verified routes for a Cebu streetwear retail brand, covering the storefront, checkout, orders, profile, and admin dashboard, with Supabase-backed auth, cart, order management, and COD plus QR Ph payment flows.",
     tags: ["Next.js", "Supabase", "TypeScript"],
     href: "https://dptone.vercel.app",
   },
@@ -29,7 +29,7 @@ const projects: Project[] = [
     logoAlt: "TableBite logo",
     title: "TableBite",
     description:
-      "Deployed a full-stack dine-in QR ordering system to production on Vercel with MySQL — customers scan a table QR to browse the menu, cart, and checkout; staff manage orders through an admin dashboard at tablebite.vercel.app.",
+      "Deployed a full-stack dine-in QR ordering system to production on Vercel with MySQL. Customers scan a table QR to browse the menu, cart, and checkout, while staff manage orders through an admin dashboard at tablebite.vercel.app.",
     tags: ["Next.js", "MySQL", "TypeScript"],
     href: "https://tablebite.vercel.app/admin/login",
   },
@@ -71,9 +71,10 @@ const skills = [
   },
 ];
 
-const footerLinks = [
+const email = "christianpaulamorin28@gmail.com";
+
+const socialLinks = [
   { label: "GitHub", href: "https://github.com/devamorin" },
-  { label: "Email", href: "mailto:christianpaulamorin28@gmail.com" },
 ];
 
 export default function Home() {
@@ -105,14 +106,14 @@ export default function Home() {
 
       <main className="flex-grow w-full max-w-container-max mx-auto px-6 md:px-8 pt-32 pb-24 flex flex-col gap-section-gap">
         <section
-          className="min-h-[819px] flex flex-col lg:flex-row items-center justify-between gap-12 relative"
+          className="min-h-[819px] flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 relative"
           id="home"
         >
           <RevealGroup className="flex-1 flex flex-col gap-6 z-10">
             <RevealItem>
-              <span className="font-code-sm text-code-sm uppercase tracking-[0.12em] text-primary">
+              <p className="font-body-lg text-lg sm:text-xl md:text-2xl font-semibold tracking-[0.01em] text-primary">
                 Christian Paul A. Amorin
-              </span>
+              </p>
             </RevealItem>
             <RevealItem>
               <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-tight">
@@ -122,15 +123,15 @@ export default function Home() {
             </RevealItem>
             <RevealItem>
               <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
-                Computer Engineering student at Cebu Institute of Technology –
-                University. I build and deploy full-stack web applications —
-                from campus marketplaces and e-commerce platforms to QR-based
-                ordering systems — and bring hands-on embedded systems
-                experience from Arduino and sensor-driven hardware projects.
+                Computer Engineering student at Cebu Institute of Technology,
+                University. I build and deploy full-stack web applications, from
+                campus marketplaces and e-commerce platforms to QR-based ordering
+                systems, and bring hands-on embedded systems experience from
+                Arduino and sensor-driven hardware projects.
               </p>
             </RevealItem>
             <RevealItem>
-              <div className="mt-4 flex items-center gap-6">
+              <div className="mt-4 flex flex-wrap items-center gap-x-8 gap-y-4">
                 <a
                   className="inline-flex items-center gap-2 font-code-sm text-code-sm text-primary hover:text-primary-container transition-colors group"
                   href="#projects"
@@ -140,33 +141,19 @@ export default function Home() {
                     arrow_forward_ios
                   </span>
                 </a>
+                <a
+                  className="inline-flex items-center gap-2 font-code-sm text-code-sm text-on-surface-variant hover:text-primary transition-colors"
+                  href={`mailto:${email}`}
+                >
+                  <span className="material-symbols-outlined text-base">
+                    mail
+                  </span>
+                  {email}
+                </a>
               </div>
             </RevealItem>
           </RevealGroup>
-          <Reveal
-            direction="none"
-            className="flex-1 relative w-full h-[400px] lg:h-[600px] flex justify-center items-center"
-          >
-            <div className="absolute inset-0 bg-primary/5 blur-3xl rounded-full pointer-events-none" />
-            <Image
-              src="/hero-workstation.png"
-              alt=""
-              aria-hidden
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-contain opacity-20 blur-sm scale-110 pointer-events-none select-none"
-            />
-            <div className="animate-float relative z-10 w-[260px] sm:w-[300px] lg:w-[360px] aspect-[4/5] rounded-2xl overflow-hidden glass-panel ring-1 ring-primary/20 shadow-[0_0_60px_rgba(221,183,255,0.12)]">
-              <Image
-                src="/profile/christian-paul-amorin.png"
-                alt="Christian Paul A. Amorin"
-                fill
-                priority
-                sizes="360px"
-                className="object-cover"
-              />
-            </div>
-          </Reveal>
+          <HeroProfile />
         </section>
 
         <section
@@ -174,7 +161,7 @@ export default function Home() {
           id="about"
         >
           <Reveal direction="left" className="md:col-span-4">
-            <h2 className="font-headline-md text-headline-md text-on-surface flex items-center gap-3">
+            <h2 className="font-headline-md text-headline-md text-on-surface flex items-center gap-3 pt-2">
               <span className="w-8 h-px bg-primary" />
               About Me
             </h2>
@@ -183,9 +170,9 @@ export default function Home() {
             <RevealItem>
               <p>
                 I am a Computer Engineering student at Cebu Institute of
-                Technology – University (CIT-U), pursuing practical experience
+                Technology, University (CIT-U), pursuing practical experience
                 through On-the-Job Training and team-based software projects. My
-                work spans the full stack — Next.js and React on the front end,
+                work spans the full stack: Next.js and React on the front end,
                 Node.js and Express or API routes on the back end, and
                 PostgreSQL or MySQL for persistence.
               </p>
@@ -204,11 +191,8 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col gap-12" id="projects">
-          <Reveal
-            direction="up"
-            className="flex justify-between items-end"
-          >
-            <h2 className="font-headline-md text-headline-md text-on-surface flex items-center gap-3">
+          <Reveal direction="up" className="flex justify-between items-end">
+            <h2 className="font-headline-md text-headline-md text-on-surface flex items-center gap-3 pt-2">
               <span className="w-8 h-px bg-primary" />
               Selected Works
             </h2>
@@ -234,7 +218,7 @@ export default function Home() {
         <section className="flex flex-col gap-12 relative" id="skills">
           <div className="absolute right-0 top-0 w-64 h-64 bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
           <Reveal direction="left">
-            <h2 className="font-headline-md text-headline-md text-on-surface flex items-center gap-3">
+            <h2 className="font-headline-md text-headline-md text-on-surface flex items-center gap-3 pt-2">
               <span className="w-8 h-px bg-primary" />
               Technical Capabilities
             </h2>
@@ -267,22 +251,36 @@ export default function Home() {
       </main>
 
       <footer
-        className="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-stack-md bg-surface-dim border-t border-white/5"
+        className="w-full py-12 px-6 md:px-8 bg-surface-dim border-t border-white/5"
         id="contact"
       >
-        <div className="font-label-caps text-on-surface">
-          © 2026 devamorin — COMPUTER ENGINEERING · CIT-U
-        </div>
-        <div className="flex gap-6">
-          {footerLinks.map((link) => (
+        <div className="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="font-label-caps text-on-surface text-center md:text-left">
+            © 2026 devamorin · COMPUTER ENGINEERING · CIT-U
+          </div>
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
             <a
-              key={link.label}
-              className="font-code-sm text-code-sm text-on-surface-variant hover:text-tertiary hover:-translate-y-0.5 transition-all duration-200"
-              href={link.href}
+              className="font-code-sm text-code-sm text-on-surface hover:text-tertiary transition-colors flex items-center gap-2"
+              href={`mailto:${email}`}
+              aria-label="Email Christian Paul A. Amorin"
             >
-              {link.label}
+              <span className="material-symbols-outlined text-base">mail</span>
+              {email}
             </a>
-          ))}
+            <div className="flex gap-6">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  className="font-code-sm text-code-sm text-on-surface-variant hover:text-tertiary hover:-translate-y-0.5 transition-all duration-200"
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </footer>
     </>
